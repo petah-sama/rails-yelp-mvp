@@ -1,20 +1,26 @@
-<h1><%= @restaurant.name %></h1>
-<br>
-<h3>Address</h3>
-<p><%= @restaurant.address %></p>
-<br>
-<h3>Phone Number</h3>
-<p><%= @restaurant.phone_number %></p>
-<br>
-<h3>Category</h3>
-<p><%= @restaurant.category %></p>
-<br>
-<h3>Reviews</h3>
-<% @restaurant.reviews.each do |review| %>
-  <p><%= '⭐️' * review.rating %></p>
-  <p><%= review.content %></p>
-<% end %>
-<br>
-<br>
-<h4><%= link_to 'Write a review', new_restaurant_review_path(@restaurant) %></h4>
-<h4><%= link_to 'Go back', restaurants_path %></h4>
+<div class="container">
+  <div class="card p-3">
+    <h1><%= @restaurant.name %></h1>
+    <br>
+    <h3>Address</h3>
+    <p><%= @restaurant.address %></p>
+    <br>
+    <h3>Phone Number</h3>
+    <p><%= @restaurant.phone_number %></p>
+    <br>
+    <h3>Category</h3>
+    <p><%= @restaurant.category %></p>
+    <br>
+    <h3>Reviews</h3>
+    <% @restaurant.reviews.each do |review| %>
+      <p><%= '⭐️' * review.rating %></p>
+      <p><%= review.content %></p>
+    <% end %>
+  </div>
+  <br>
+  <br>
+  <div class="d-flex">
+    <h4 class="btn btn-info btn-lg m-2"><%= link_to 'Go back', restaurants_path %></h4>
+    <h4 class="btn btn-info btn-lg m-2"><%= link_to 'Write a review', new_restaurant_review_path(@restaurant) %></h4>
+  </div>
+</div>

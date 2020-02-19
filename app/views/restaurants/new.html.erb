@@ -1,9 +1,13 @@
-<h1>Build a new Restaurant 🏗</h1>
+<div class="container">
+  <h1>Build a new Restaurant 🏗</h1>
 
-<%= simple_form_for(@restaurant) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :phone_number %>
-  <%= f.input :category %>
-  <%= f.button :submit  %>
-<% end %>
+  <%= simple_form_for(@restaurant) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :phone_number %>
+    <%= f.input :category %>
+    <h3 class="btn btn-info btn-lg m-2"><%= f.button :submit %></h3>
+  <% end %>
+
+  <h3 class="btn btn-info btn-lg m-2"><%= link_to 'Go back', restaurants_path %></h3>
+</div>

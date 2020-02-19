@@ -1,14 +1,24 @@
-<h1>This is a Restaurant List 🍽</h1>
-<br>
+<div class="logo">
+  <b>Th<span>is<span> <span>is<span> <span>a R<span>es</span>ta<span>ur</span>ant<span> <span>Li<span>st<span> <span>🍽<span></b>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="container">
+    <br>
+      <% @restaurants.each do |restaurant| %>
+        <div class="card m-3 p-3">
+          <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
+          <ul>
+            <li><%= restaurant.address %></li>
+            <li><%= restaurant.phone_number %></li>
+            <li><%= restaurant.category.capitalize %></li>
+          </ul>
+        </div>
+      <% end %>
+    <br>
 
-<% @restaurants.each do |restaurant| %>
-  <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
-  <ul>
-    <li><%= restaurant.address %></li>
-    <li><%= restaurant.phone_number %></li>
-    <li><%= restaurant.category.capitalize %></li>
-  </ul>
-<% end %>
-<br>
-
-<h3><%= link_to 'Add a new Restaurant', new_restaurant_path %></h3>
+    <h3 class="btn btn-info btn-lg m-2"><%= link_to 'Add a new Restaurant', new_restaurant_path %></h3>
+  </div>
+</div>
